@@ -10,6 +10,11 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+import { ImageNode } from './nodes/imageNode';
+import { MathNode } from './nodes/mathNode';
+import { DateNode } from './nodes/dateNode';
+import { TimerNode } from './nodes/timerNode';
+import { MarkdownNode } from './nodes/markdownNode';
 
 import 'reactflow/dist/style.css';
 
@@ -20,6 +25,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  image: ImageNode,
+  math: MathNode,
+  date: DateNode,
+  timer: TimerNode,
+  markdown: MarkdownNode,
 };
 
 const selector = (state) => ({
@@ -90,7 +100,7 @@ export const PipelineUI = () => {
 
     return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div ref={reactFlowWrapper} style={{width: '100%', height: 'calc(100vh - 120px)'}}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
